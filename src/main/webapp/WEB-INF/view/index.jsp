@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Spring Demo12</title>
+<title>DevOps Demo</title>
 </head>
 <body>
-	<h1>Spring Demo Success!</h1>
+	<h1>DevOps Demo Success!</h1>
 </body>
 </html>
