@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>DevOps Demo Success!</h1>
-	<h2>Playbook test</h1>
+	<h2>New Playbook test</h1>
 </body>
 </html>
