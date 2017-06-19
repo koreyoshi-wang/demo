@@ -16,6 +16,9 @@
 
 	<!-- 注册HandlerMapper、HandlerAdapter两个映射类 -->
 	<mvc:annotation-driven />
+	
+	<!-- 将地址“/”重定向到index页面 -->
+	<mvc:view-controller path="/" view-name="redirect:/index" />
 
 	<!-- 访问静态资源 -->
 	<mvc:default-servlet-handler />
