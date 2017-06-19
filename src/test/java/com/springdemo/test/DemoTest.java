@@ -17,6 +17,7 @@ public class DemoTest {
 		assertTrue(true);
 	}
 	
+	
 	@Test
 	public void failureTest(){
 		assertTrue(true);
