@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>DevOps Demo Success!</h1>
+	<h2>Success Email test</h1>
 </body>
 </html>
