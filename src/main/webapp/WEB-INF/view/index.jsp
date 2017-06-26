@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>DevOps Demo Success!</h1>
-	<h1>Adding a new server!</h1>
+	<h1>Adding a new server success!</h1>
 </body>
 </html>
