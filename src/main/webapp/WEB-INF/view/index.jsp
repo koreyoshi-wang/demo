@@ -7,7 +7,7 @@
 <title>DevOps Demo</title>
 </head>
 <body>
-	<h1>DevOps Demo Success!</h1>
-	<h1>Adding a new server success!</h1>
+	<h1>DevOps Demo Success !</h1>
+	<h1>Enhancement Ansible Playbook test</h1>
 </body>
 </html>
