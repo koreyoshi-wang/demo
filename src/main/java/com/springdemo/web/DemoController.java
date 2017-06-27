@@ -8,13 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DemoController {
 
+	//If TEST_NAME equals NAME test will success!
 	public static String NAME = "DevOps";
-	//public static String NAME = "DXC";
+	public static String TEST_NAME = "DXC";
 	
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {
     	ModelAndView modelAndView = new ModelAndView("index");
-    	modelAndView.addObject("wellcomMsg", sayHello(NAME));
+    	modelAndView.addObject("wellcomMsg", sayHello(TEST_NAME));
         return modelAndView;
     }
     

@@ -19,7 +19,7 @@ public class DemoTest {
 	
 	@Test
 	public void sayHelloTest(){
-		assert(demoController.sayHello(DemoController.NAME).equals("Wellcom DevOps !"));
+		assertTrue("'TEST_NAME' must equals 'NAME' !", demoController.sayHello(DemoController.TEST_NAME).equals("Wellcom "+ DemoController.NAME +" !"));
 	}
 	
 	@Test
