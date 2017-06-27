@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DemoController {
 
-	//public static String NAME = "DevOps";
-	public static String NAME = "DXC";
+	public static String NAME = "DevOps";
+	//public static String NAME = "DXC";
 	
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {
