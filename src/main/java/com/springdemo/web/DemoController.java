@@ -9,8 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class DemoController {
 
 	//If TEST_NAME equals NAME test will success!
-	public static String NAME = "DXC";
-	public static String TEST_NAME = "DXC";
+	public static String NAME = "DevOps";
+	public static String TEST_NAME = "DevOps";
 	
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {
