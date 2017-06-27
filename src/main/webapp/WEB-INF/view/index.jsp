@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DevOps Demo</title>
 </head>
-<body>
-	<h1>DevOps Demo Success !</h1>
-	<h1>Enhancement Ansible Playbook test</h1>
+<body style="text-align:center">
+	<h1>DevOps Demo</h1>
+	<h2>${wellcomMsg}</h2>
 </body>
 </html>
