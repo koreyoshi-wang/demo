@@ -10,16 +10,16 @@ public class DemoController {
 
 	//If TEST_NAME equals NAME test will success!
 	public static String NAME = "DevOps";
-	public static String TEST_NAME = "DXC";
+	public static String TEST_NAME = "DevOps";
 	
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {
     	ModelAndView modelAndView = new ModelAndView("index");
-    	modelAndView.addObject("wellcomMsg", sayHello(TEST_NAME));
+    	modelAndView.addObject("welcomeMsg", sayHello(TEST_NAME));
         return modelAndView;
     }
     
     public String sayHello(String name){
-    	return "Wellcom " + name + " !";
+    	return "Welcome " + name + " !";
     }
 }

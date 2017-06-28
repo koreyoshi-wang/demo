@@ -19,7 +19,7 @@ public class DemoTest {
 	
 	@Test
 	public void sayHelloTest(){
-		assertTrue("'TEST_NAME' must equals 'NAME' !", demoController.sayHello(DemoController.TEST_NAME).equals("Wellcom "+ DemoController.NAME +" !"));
+		assertTrue("'TEST_NAME' must equals 'NAME' !", demoController.sayHello(DemoController.TEST_NAME).equals("Welcome "+ DemoController.NAME +" !"));
 	}
 	
 	@Test

@@ -8,6 +8,6 @@
 </head>
 <body style="text-align:center">
 	<h1>DevOps Demo</h1>
-	<h2>${wellcomMsg}</h2>
+	<h2>${welcomeMsg}</h2>
 </body>
 </html>
