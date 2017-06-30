@@ -10,8 +10,7 @@ public class DemoController {
 
 	//If TEST_NAME equals NAME test will success!
 	public static String NAME = "DevOps";
-	//public static String TEST_NAME = "DevOps";
-	public static String TEST_NAME = "Test";
+	public static String TEST_NAME = "DevOps";
 	
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView index() {
