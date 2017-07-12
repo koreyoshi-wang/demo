@@ -7,7 +7,9 @@
 <title>DevOps Demo</title>
 </head>
 <body style="text-align:center">
-	<h1>DevOps Demo</h1>
-	<h2>${welcomeMsg}</h2>
+	<h1>Welcome to DevOps Demo Environment</h1>
+	<h2>
+	${username}
+	</h2>
 </body>
 </html>
