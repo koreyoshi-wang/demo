@@ -11,7 +11,7 @@ import com.springdemo.entities.User;
 import com.springdemo.service.LoginService;
 
 @Service
-public class LoginServicImpl implements LoginService{
+public class LoginServiceImpl implements LoginService{
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
