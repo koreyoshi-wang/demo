@@ -188,7 +188,7 @@
 	                    jQuery("#error-info4").css("display", "block").css("color", "red").text("Email address or password is not correct.");
 	                } else if (data == true) {
 	                	var currentUrl = "${currenturl}";
-	                	var indexUrl = window.location.protocol + "//" + window.location.host + "/demo/index";
+	                	var indexUrl = window.location.protocol + "//" + window.location.host + "/demo/dashboard";
 	                	if ("" != currentUrl) {
 	                		indexUrl =  "${contextPath}"+ currentUrl;
 	                	}

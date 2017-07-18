@@ -36,7 +36,6 @@ public class LoginController {
 			HttpServletResponse response) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		ModelAndView modelAndView = new ModelAndView("login");
-		System.out.println(request.getContextPath());
 		map.put("contextPath", request.getContextPath());
 		modelAndView.addAllObjects(map);
 		return modelAndView;
@@ -54,14 +53,12 @@ public class LoginController {
 		boolean loginResult = false;
 		if (user != null) {
 			String pwddb = user.getPassword();
-			System.out.println(user.getPassword());
 			if (pwddb.equals(password)){
 				loginResult = true;
 				request.getSession().setAttribute("user", user);
-				request.getSession().setAttribute("username", username);	
+				request.getSession().setAttribute("username", username);
 			}
 		}
-		System.out.println(loginResult);
 		return loginResult;
 	}
 }
