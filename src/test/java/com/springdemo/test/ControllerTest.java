@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -21,8 +22,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.springdemo.entities.User;
 import com.springdemo.impl.LoginServiceImpl;
+import com.springdemo.service.LoginService;
 import com.springdemo.web.DashboardController;
 import com.springdemo.web.LoginController;
 
@@ -44,11 +49,12 @@ public class ControllerTest {
 	private DashboardController dashboardController; 
 	
 	@Resource
-	private LoginServiceImpl loginServiceImpl;
+	private LoginService loginService;
 	
 	User user = new User();
 	static String userName = "testCase";
 	static String password = "123456";
+	static int size;
 	
 	@BeforeClass
 	public static void setUp(){      
@@ -56,17 +62,41 @@ public class ControllerTest {
         request.setCharacterEncoding("UTF-8");
         response = new MockHttpServletResponse();
     }
-
+	
+	@Before
+	public void Init(){
+		size = loginService.getAllUsers().size();
+    }
+	
 	@Test
 	public void test01() {
 		request.setParameter("username", userName);
 		request.setParameter("password", password);
+		size = loginService.getAllUsers().size();
 		String returnCode = dashboardController.addUser(request, response);
 		Assert.assertEquals("1", returnCode);
 	}
 	
 	@Test
 	public void test02() {
+		request.setParameter("username", userName);
+		request.setParameter("password", password);
+		String returnCode = dashboardController.addUser(request, response);
+		Assert.assertEquals("0", returnCode);
+	}
+	
+	@Test
+	public void test03() {
+		request.setParameter("draw", "1");
+		String returnCode = dashboardController.getAllUser(request, response);
+		JSONObject jsonObject = JSON.parseObject(returnCode);
+		String userListStr = jsonObject.getString("data");
+		List userList = JSON.parseArray(userListStr, User.class);
+		Assert.assertEquals(size, userList.size());
+	}
+
+	@Test
+	public void test04() {
 		request.setAttribute("username", userName);
 		request.setAttribute("password", password);
 		boolean returnCode = false;
@@ -80,9 +110,10 @@ public class ControllerTest {
 	}
 	
 	@Test
-	public void test03() {
+	public void test05() {
 		request.setAttribute("username", userName);
 		String returnCode = dashboardController.deleteUser(request, response);
 		Assert.assertEquals("1", returnCode);
 	}
+	
 }
