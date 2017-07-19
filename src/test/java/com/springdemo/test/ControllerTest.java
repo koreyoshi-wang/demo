@@ -57,7 +57,6 @@ public class ControllerTest {
         response = new MockHttpServletResponse();
     }
 
-	
 	@Test
 	public void test01() {
 		request.setParameter("username", userName);
