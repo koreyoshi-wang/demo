@@ -43,6 +43,7 @@ public class UserCRUDTest {
 	@Test
 	public void test03() {
 		User user = loginServiceImpl.getUserByName(userName);
+		Assert.assertEquals(userName, user.getUsername());
 		Assert.assertEquals(password, user.getPassword());
 	}
 	
