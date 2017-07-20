@@ -21,6 +21,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -125,4 +126,18 @@ public class ControllerTest {
 		Assert.assertEquals("1", returnCode);
 	}
 	
+	@Test
+	public void test07() {
+		ModelAndView modelAndView = loginController.login(request, response);
+		Assert.assertEquals("login", modelAndView.getViewName());
+	}
+	
+	@Test
+	public void test08() {
+		ModelAndView modelAndView = dashboardController.dashboard(request, response);
+		System.out.println(modelAndView.getModel());
+		boolean hasPage = modelAndView.getModel().containsValue("../dashboard.jsp");
+		Assert.assertEquals("common/layout", modelAndView.getViewName());
+		Assert.assertEquals(true, hasPage);
+	}
 }
