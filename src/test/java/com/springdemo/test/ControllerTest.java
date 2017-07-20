@@ -88,6 +88,14 @@ public class ControllerTest {
 	
 	@Test
 	public void test03() {
+		request.setParameter("username", userName);
+		//request.setParameter("password", "");
+		String returnCode = dashboardController.addUser(request, response);
+		Assert.assertEquals("0", returnCode);
+	}
+	
+	@Test
+	public void test04() {
 		request.setParameter("draw", "1");
 		String returnCode = dashboardController.getAllUser(request, response);
 		JSONObject jsonObject = JSON.parseObject(returnCode);
@@ -97,7 +105,7 @@ public class ControllerTest {
 	}
 	
 	@Test
-	public void test04() {
+	public void test05() {
 		request.setAttribute("username", userName);
 		request.setAttribute("password", password);
 		boolean returnCode = false;
@@ -111,7 +119,7 @@ public class ControllerTest {
 	}
 	
 	@Test
-	public void test05() {
+	public void test06() {
 		request.setAttribute("username", userName);
 		String returnCode = dashboardController.deleteUser(request, response);
 		Assert.assertEquals("1", returnCode);
