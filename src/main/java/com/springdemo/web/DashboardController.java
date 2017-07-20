@@ -43,7 +43,7 @@ public class DashboardController extends BaseController{
 	
 	@RequestMapping(value = "/json")
 	@ResponseBody
-	public String userPaging(HttpServletRequest request,
+	public String getAllUser(HttpServletRequest request,
 			HttpServletResponse response) {
 		String sEcho = request.getParameter("draw");
 		JSONObject json = new JSONObject();
