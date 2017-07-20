@@ -63,11 +63,12 @@ public class ControllerTest {
         response = new MockHttpServletResponse();
     }
 	
+	/*
 	@Before
 	public void Init(){
 		size = loginService.getAllUsers().size();
     }
-	
+	*/
 	@Test
 	public void test01() {
 		request.setParameter("username", userName);
@@ -84,7 +85,7 @@ public class ControllerTest {
 		String returnCode = dashboardController.addUser(request, response);
 		Assert.assertEquals("0", returnCode);
 	}
-	
+	/*
 	@Test
 	public void test03() {
 		request.setParameter("draw", "1");
@@ -94,7 +95,7 @@ public class ControllerTest {
 		List userList = JSON.parseArray(userListStr, User.class);
 		Assert.assertEquals(size, userList.size());
 	}
-
+	*/
 	@Test
 	public void test04() {
 		request.setAttribute("username", userName);
