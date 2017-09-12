@@ -21,7 +21,7 @@ import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration({"classpath:applicationContext.xml","classpath:spring-servlet.xml"})
-public class UserCRUDTest {
+public class UserCRUD {
 	
 	@Resource
 	private LoginServiceImpl loginServiceImpl;
