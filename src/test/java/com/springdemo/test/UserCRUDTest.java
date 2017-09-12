@@ -22,7 +22,7 @@ import junit.framework.Assert;
 @WebAppConfiguration
 @ContextConfiguration({"classpath:applicationContext.xml","classpath:spring-servlet.xml"})
 public class UserCRUDTest {
-	/*
+	
 	@Resource
 	private LoginServiceImpl loginServiceImpl;
 	String userName = "testCase";
@@ -52,5 +52,5 @@ public class UserCRUDTest {
 		int returnCode = loginServiceImpl.deleteUser(userName);
 		Assert.assertEquals(1, returnCode);
 	}
-	*/
+	
 }
