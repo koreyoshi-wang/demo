@@ -38,7 +38,7 @@ import junit.framework.Assert;
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration({"classpath:applicationContext.xml","classpath:spring-servlet.xml"})
-public class ControllerTest {
+public class Controller {
 	
 	private static MockHttpServletRequest request;    
 	private static MockHttpServletResponse response;
