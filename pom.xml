@@ -22,19 +22,6 @@
     <finalName>demo</finalName>
     <plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.5</version>
-				<configuration>
-				<threshold>High</threshold>
-				<effort>Default</effort>
-				<findbugsXmlOutput>true</findbugsXmlOutput>
-				<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-				<xmlOutput>true</xmlOutput>
-				<findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
-				</configuration>
-            </plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.7.9</version>
@@ -269,14 +256,26 @@
   <reporting>
   	<plugins>
   		<plugin>
-		   <groupId>org.codehaus.mojo</groupId>
-		   <artifactId>findbugs-maven-plugin</artifactId>
-		   <version>3.0.5</version>
-		   <configuration>
-			  <findbugsXmlOutput>true</findbugsXmlOutput>
-			  <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-			  <xmlOutput>true</xmlOutput>
-		   </configuration>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+			<version>3.0.5</version>
+			<configuration>
+				<xmlOutput>true</xmlOutput>
+				<findbugsXmlOutput>true</findbugsXmlOutput>
+				<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+			<version>2.17</version>
+			<reportSets>
+				<reportSet>
+					<reports>
+						<report>checkstyle</report>
+					</reports>
+				</reportSet>
+			</reportSets>
 		</plugin>
   	</plugins>
   </reporting>
