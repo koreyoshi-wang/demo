@@ -281,7 +281,25 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jxr-plugin</artifactId>
             <version>2.3</version>
-        </plugin>		
+        </plugin>
+        <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-project-info-reports-plugin</artifactId>
+			<version>2.4</version>
+			<configuration>
+				<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+				<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				<relativizeDecorationLinks>false</relativizeDecorationLinks>
+			</configuration>
+			<reportSets>
+				<reportSet>
+					<reports>
+						<report>dependencies</report>
+						<report>scm</report>
+					</reports>
+				</reportSet>
+			</reportSets>
+		</plugin>		
   	</plugins>
   </reporting>
   
