@@ -258,6 +258,12 @@
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
 	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-project-info-reports-plugin</artifactId>
+		<version>2.9</version>
+		<type>maven-plugin</type>
+	</dependency>
   </dependencies>
     
   <!-- Findbugs Plugin -->
