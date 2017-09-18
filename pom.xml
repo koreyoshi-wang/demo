@@ -7,20 +7,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>springmvc Maven Webapp</name>
   <url>http://maven.apache.org</url>
-
-  
-<profiles>
-	<profile>
-		<id>sonar</id>
-		<activation>
-			<activeByDefault>true</activeByDefault>
-		</activation>
-		<properties>
-			<!-- Optional URL to server. Default value is http://localhost:9000 -->
-			<sonar.host.url>http://52.179.7.241:9000/</sonar.host.url>
-		</properties>
-	</profile>
-</profiles>
   
   <properties>
 	<mysql.version>5.1.35</mysql.version>
