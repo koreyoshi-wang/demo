@@ -48,9 +48,7 @@ public class ControllerTest {
 	
 	User user = new User();
 	static String userName = "testCase";
-	//static String password = "123456";
-	static String password = "111111";
-	static int size;
+	static String password = "123456";
 	
 	@BeforeClass
 	public static void setUp() {      
@@ -60,21 +58,21 @@ public class ControllerTest {
     }
 	
 	
-	@Before
-	public void init() {
-		size = loginService.getAllUsers().size();
-    }
-	
+	/**
+	 * Add user
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test01() {
 		request.setParameter("username", userName);
 		request.setParameter("password", password);
-		size = loginService.getAllUsers().size();
 		String returnCode = dashboardController.addUser(request, response);
 		Assert.assertEquals("1", returnCode);
 	}
 	
+	/**
+	 * Add same user again, failed.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test02() {
@@ -84,6 +82,9 @@ public class ControllerTest {
 		Assert.assertEquals("0", returnCode);
 	}
 	
+	/**
+	 * Add same user without password, failed.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test03() {
@@ -93,17 +94,9 @@ public class ControllerTest {
 		Assert.assertEquals("0", returnCode);
 	}
 	
-	@SuppressWarnings({ "deprecation", "rawtypes" })
-	@Test
-	public void test04() {
-		request.setParameter("draw", "1");
-		String returnCode = dashboardController.getAllUser(request, response);
-		JSONObject jsonObject = JSON.parseObject(returnCode);
-		String userListStr = jsonObject.getString("data");
-		List userList = JSON.parseArray(userListStr, User.class);
-		Assert.assertEquals(size, userList.size());
-	}
-	
+	/**
+	 * User Login Test case.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test05() {
@@ -119,6 +112,9 @@ public class ControllerTest {
 		Assert.assertEquals(true, returnCode);
 	}
 	
+	/**
+	 * Delete test user.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test06() {
@@ -127,6 +123,9 @@ public class ControllerTest {
 		Assert.assertEquals("1", returnCode);
 	}
 	
+	/**
+	 * Login controller modelAndView test case.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test07() {
@@ -134,6 +133,9 @@ public class ControllerTest {
 		Assert.assertEquals("login", modelAndView.getViewName());
 	}
 	
+	/**
+	 * DashBoard modelAndView test case
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void test08() {
