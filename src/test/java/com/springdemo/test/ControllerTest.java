@@ -50,6 +50,8 @@ public class ControllerTest {
 	static String userName = "testCase";
 	static String password = "123456";
 	
+	static int size;
+	
 	@BeforeClass
 	public static void setUp() {      
         request = new MockHttpServletRequest();        
@@ -57,6 +59,11 @@ public class ControllerTest {
         response = new MockHttpServletResponse();
     }
 	
+	
+	@Before
+	public void init() {
+		size = loginService.getAllUsers().size();
+    }
 	
 	/**
 	 * Add user
@@ -66,6 +73,7 @@ public class ControllerTest {
 	public void test01() {
 		request.setParameter("username", userName);
 		request.setParameter("password", password);
+		size = loginService.getAllUsers().size();
 		String returnCode = dashboardController.addUser(request, response);
 		Assert.assertEquals("1", returnCode);
 	}
@@ -92,6 +100,20 @@ public class ControllerTest {
 		//request.setParameter("password", "");
 		String returnCode = dashboardController.addUser(request, response);
 		Assert.assertEquals("0", returnCode);
+	}
+	
+	/**
+	 * Verify user count after adding new user  
+	 */
+	@SuppressWarnings({ "deprecation", "rawtypes" })
+	@Test
+	public void test04() {
+		request.setParameter("draw", "1");
+		String returnCode = dashboardController.getAllUser(request, response);
+		JSONObject jsonObject = JSON.parseObject(returnCode);
+		String userListStr = jsonObject.getString("data");
+		List userList = JSON.parseArray(userListStr, User.class);
+		Assert.assertEquals(size, userList.size());
 	}
 	
 	/**
