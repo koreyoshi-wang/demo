@@ -20,10 +20,9 @@ public class LoginServiceImpl implements LoginService {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
     public User getUserByName(String name) {
-		User user = new User();
 		String sql = "select * from user where username=?";  
         String[] args = new String[] {name};  
-        user = (User) jdbcTemplate.queryForObject(sql, args,new BeanPropertyRowMapper(User.class));
+        User user = (User) jdbcTemplate.queryForObject(sql, args,new BeanPropertyRowMapper(User.class));
 		return user;
 	}
 
