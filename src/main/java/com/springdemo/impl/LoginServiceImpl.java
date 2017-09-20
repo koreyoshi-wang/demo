@@ -27,6 +27,7 @@ public class LoginServiceImpl implements LoginService{
 		return user;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public List<User> getAllUsers() {
 		// TODO Auto-generated method stub
@@ -78,5 +79,9 @@ public class LoginServiceImpl implements LoginService{
 		String sql = "delete from user where username=?";
 		int returnCode = jdbcTemplate.update(sql, new String[]{username});
 		return returnCode;
-	}	
+	}
+	
+	public int updateDatabase(String sql, String[] parameters ){
+		return jdbcTemplate.update(sql, parameters);	
+	}
 }

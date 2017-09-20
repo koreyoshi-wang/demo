@@ -17,6 +17,7 @@ import com.springdemo.impl.LoginServiceImpl;
 
 import junit.framework.Assert;
 
+@SuppressWarnings("deprecation")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration

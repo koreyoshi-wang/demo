@@ -1,13 +1,9 @@
 package com.springdemo.test;
 
-import static org.junit.Assert.*;
-
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -24,10 +20,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.springdemo.entities.User;
-import com.springdemo.impl.LoginServiceImpl;
 import com.springdemo.service.LoginService;
 import com.springdemo.web.DashboardController;
 import com.springdemo.web.LoginController;
@@ -70,6 +64,7 @@ public class ControllerTest {
 		size = loginService.getAllUsers().size();
     }
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test01() {
 		request.setParameter("username", userName);
@@ -79,6 +74,7 @@ public class ControllerTest {
 		Assert.assertEquals("1", returnCode);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test02() {
 		request.setParameter("username", userName);
@@ -87,6 +83,7 @@ public class ControllerTest {
 		Assert.assertEquals("0", returnCode);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test03() {
 		request.setParameter("username", userName);
@@ -95,6 +92,7 @@ public class ControllerTest {
 		Assert.assertEquals("0", returnCode);
 	}
 	
+	@SuppressWarnings({ "deprecation", "rawtypes" })
 	@Test
 	public void test04() {
 		request.setParameter("draw", "1");
@@ -105,6 +103,7 @@ public class ControllerTest {
 		Assert.assertEquals(size, userList.size());
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test05() {
 		request.setAttribute("username", userName);
@@ -119,6 +118,7 @@ public class ControllerTest {
 		Assert.assertEquals(true, returnCode);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test06() {
 		request.setAttribute("username", userName);
@@ -126,12 +126,14 @@ public class ControllerTest {
 		Assert.assertEquals("1", returnCode);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test07() {
 		ModelAndView modelAndView = loginController.login(request, response);
 		Assert.assertEquals("login", modelAndView.getViewName());
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void test08() {
 		ModelAndView modelAndView = dashboardController.dashboard(request, response);
