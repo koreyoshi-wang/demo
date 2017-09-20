@@ -20,8 +20,7 @@ public class DemoTest {
 	
 	@Resource
 	private LoginServiceImpl loginServiceImpl;
-	//String userName = "test@hpe.com";
-	String userName = "abc@hpe.com";
+	String userName = "test@hpe.com";
 	
 	@Test
 	public void verifyUser() {
