@@ -1,18 +1,18 @@
 package com.springdemo.service;
 
-import java.util.List;
-
 import com.springdemo.entities.User;
 
+import java.util.List;
+
 public interface LoginService {
-   User getUserByName(String Name);
-
-   List<User> getAllUsers();
-
-   boolean queryUserExist(String username);
-
-   int addUser(String username, String password);
-
-   int deleteUser(String username);
-    
+	
+	User getUserByName(String name);
+	
+	List<User> getAllUsers();
+	
+	boolean queryUserExist(String username);
+	
+	int addUser(String username, String password);
+	
+	int deleteUser(String username);
 }

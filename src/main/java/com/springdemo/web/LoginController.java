@@ -44,7 +44,7 @@ public class LoginController {
 		boolean loginResult = false;
 		if (user != null) {
 			String pwddb = user.getPassword();
-			if (pwddb.equals(password)){
+			if (pwddb.equals(password)) {
 				loginResult = true;
 				request.getSession().setAttribute("user", user);
 				request.getSession().setAttribute("username", username);

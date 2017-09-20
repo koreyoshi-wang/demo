@@ -52,7 +52,7 @@ public class ControllerTest {
 	static int size;
 	
 	@BeforeClass
-	public static void setUp(){      
+	public static void setUp() {      
         request = new MockHttpServletRequest();        
         request.setCharacterEncoding("UTF-8");
         response = new MockHttpServletResponse();
@@ -60,7 +60,7 @@ public class ControllerTest {
 	
 	
 	@Before
-	public void Init(){
+	public void init() {
 		size = loginService.getAllUsers().size();
     }
 	

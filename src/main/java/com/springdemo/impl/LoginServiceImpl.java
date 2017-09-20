@@ -13,17 +13,17 @@ import com.springdemo.entities.User;
 import com.springdemo.service.LoginService;
 
 @Service
-public class LoginServiceImpl implements LoginService{
+public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-    public User getUserByName(String name){
+    public User getUserByName(String name) {
 		User user = new User();
 		String sql = "select * from user where username=?";  
         String[] args = new String[] {name};  
-        user = (User)jdbcTemplate.queryForObject(sql, args,new BeanPropertyRowMapper(User.class));
+        user = (User) jdbcTemplate.queryForObject(sql, args,new BeanPropertyRowMapper(User.class));
 		return user;
 	}
 
@@ -48,13 +48,13 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public boolean queryUserExist(String username) {
 		// TODO Auto-generated method stub
-		if (!username.equals(null)){
+		if (!username.equals(null)) {
 			String sql = "select count(*) from user where username=?";
 			int userCount = jdbcTemplate.queryForObject(sql, new String[]{username}, Integer.class);
-			if (userCount == 0){
+			if (userCount == 0) {
 				return false;
 			}
-			else{
+			else {
 				return true;
 			}
 		}
@@ -64,11 +64,11 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public int addUser(String username, String password) {
 		// TODO Auto-generated method stub
-		if (username != null && password != null){
+		if (username != null && password != null) {
 			String sql = "insert into user (username, password) values(?,?)";
 			int returnCode = jdbcTemplate.update(sql, new String[]{username, password});
 			return returnCode;
-		}else{
+		} else {
 			return 0;
 		}
 	}
@@ -81,7 +81,7 @@ public class LoginServiceImpl implements LoginService{
 		return returnCode;
 	}
 	
-	public int updateDatabase(String sql, String[] parameters ){
+	public int updateDatabase(String sql, String[] parameters ) {
 		return jdbcTemplate.update(sql, parameters);	
 	}
 }

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.springdemo.web;
 
 import java.util.HashMap;
@@ -11,22 +8,21 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSONObject;
+import com.springdemo.entities.User;
+import com.springdemo.service.LoginService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSONObject;
-import com.springdemo.entities.User;
-import com.springdemo.service.LoginService;
-
 @Controller
-@RequestMapping(value="/dashboard")
-public class DashboardController extends BaseController{
+@RequestMapping(value = "/dashboard")
+public class DashboardController extends BaseController {
 	
 	@Resource
 	private LoginService loginService;
-	
 	@SuppressWarnings({ "rawtypes", "unused" })
 	@RequestMapping
 	public ModelAndView dashboard(HttpServletRequest request,
@@ -61,9 +57,9 @@ public class DashboardController extends BaseController{
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		boolean userExist = loginService.queryUserExist(username);
-		if (userExist){
+		if (userExist) {
 			return "0";
-		}else{
+		} else {
 			int returnCode = loginService.addUser(username, password);
 			return String.valueOf(returnCode);
 		}
@@ -74,7 +70,7 @@ public class DashboardController extends BaseController{
 	public String deleteUser(HttpServletRequest request,
 			HttpServletResponse response) {
 		String username = request.getParameter("username");
-		if (username != null){
+		if (username != null) {
 			int returnCode = loginService.deleteUser(username);
 			return String.valueOf(returnCode);
 		}
