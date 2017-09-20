@@ -48,7 +48,8 @@ public class ControllerTest {
 	
 	User user = new User();
 	static String userName = "testCase";
-	static String password = "123456";
+	//static String password = "123456";
+	static String password = "111111";
 	static int size;
 	
 	@BeforeClass

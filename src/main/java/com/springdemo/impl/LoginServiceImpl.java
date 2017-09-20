@@ -47,17 +47,11 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public boolean queryUserExist(String username) {
-		// TODO Auto-generated method stub
-		if (!username.equals(null)) {
 			String sql = "select count(*) from user where username=?";
 			int userCount = jdbcTemplate.queryForObject(sql, new String[]{username}, Integer.class);
 			if (userCount == 0) {
 				return false;
 			}
-			else {
-				return true;
-			}
-		}
 		return true;
 	}
 
