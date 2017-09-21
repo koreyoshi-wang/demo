@@ -28,33 +28,4 @@ public class DemoTest {
 		Assert.assertEquals(true, userExist);
 	}
 	
-	@Test
-	public void test02() {
-		Assert.assertEquals(true, 1 == 2);
-	}
-	
-	@Test
-	public void test03() {
-		Assert.assertEquals(true, 3 == 4);
-	}
-	
-	@Test
-	public void test04() {
-		Assert.assertEquals(true, 1 == 2);
-	}
-	
-	@Test
-	public void test05() {
-		Assert.assertEquals(true, 3 == 4);
-	}
-	
-	@Test
-	public void test06() {
-		Assert.assertEquals(true, 1 == 2);
-	}
-	
-	@Test
-	public void test07() {
-		Assert.assertEquals(true, 3 == 4);
-	}
 }
