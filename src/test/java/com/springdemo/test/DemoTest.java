@@ -20,11 +20,21 @@ public class DemoTest {
 	
 	@Resource
 	private LoginServiceImpl loginServiceImpl;
-	String userName = "aaa@hpe.com";
+	String userName = "test@hpe.com";
 	
 	@Test
 	public void verifyUser() {
 		boolean userExist = loginServiceImpl.queryUserExist(userName);
 		Assert.assertEquals(true, userExist);
+	}
+	
+	@Test
+	public void test02() {
+		Assert.assertEquals(true, 1 == 2);
+	}
+	
+	@Test
+	public void test03() {
+		Assert.assertEquals(true, 3 == 4);
 	}
 }
